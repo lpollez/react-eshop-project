@@ -3,14 +3,34 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-  apiKey: 'AIzaSyBU4yr0J3vRe8vXy0s_K4UQFaUS_ICz1iQ',
-  authDomain: 'react-eshop-project-db.firebaseapp.com',
-  databaseURL: 'https://react-eshop-project-db.firebaseio.com',
-  projectId: 'react-eshop-project-db',
-  storageBucket: 'react-eshop-project-db.appspot.com',
-  messagingSenderId: '366374399017',
-  appId: '1:366374399017:web:080505993268adf6cf4038',
-  measurementId: 'G-ZDS3L423E0'
+  apiKey: 'AIzaSyCGiPxLnOn06O1HBKMy78hbNXPgUgbwRp8',
+  authDomain: 'react-eshop-project.firebaseapp.com',
+  databaseURL: 'https://react-eshop-project.firebaseio.com',
+  projectId: 'react-eshop-project',
+  storageBucket: 'react-eshop-project.appspot.com',
+  messagingSenderId: '1072828116966',
+  appId: '1:1072828116966:web:85ee9311aab7dd71d6b027'
+};
+
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+  if (!userAuth) return;
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const snapShot = await userRef.get();
+  if (!snapShot.exists) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        createdAt,
+        ...additionalData
+      });
+    } catch (error) {
+      console.error('error creating user', error.message);
+    }
+  }
+  return userRef;
 };
 
 firebase.initializeApp(config);
