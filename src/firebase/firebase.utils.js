@@ -67,8 +67,19 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ param: 'select_account' });
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+googleProvider.setCustomParameters({ param: 'select_account' });
+export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+// get current user from promise to determine if Firebase user session exists or not
+// use onAuthStateChanged listener to do that
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsuscribe = auth.onAuthStateChanged(userAuth => {
+      unsuscribe();
+      resolve(userAuth);
+    }, reject);
+  });
+};
+
 export default firebase;
