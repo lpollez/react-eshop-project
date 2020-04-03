@@ -68,7 +68,7 @@ function* signOut() {
   }
 }
 
-function* signUp({ payload: { email, password, displayName } }) {
+function* signUp({ payload: { displayName, email, password } }) {
   try {
     const { user } = yield auth.createUserWithEmailAndPassword(email, password);
     yield put(signUpSuccess({ user, additionalData: { displayName } }));
