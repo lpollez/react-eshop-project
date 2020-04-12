@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Directory from '../../components/directory/directory-menu.component';
+import { default as Directory } from '../../components/directory/directory.container';
 
 import { HomePageContainer } from './homepage.styles';
 

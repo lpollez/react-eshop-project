@@ -2,23 +2,24 @@ import { ShopActionsTypes } from './shop.types';
 
 import {
   firestore,
-  convertCollectionsSnapshotToMap
+  convertCollectionsSnapshotToMap,
 } from '../../firebase/firebase.utils';
 
 export const fetchCollectionsStart = () => ({
-  type: ShopActionsTypes.FETCH_COLLECTIONS_START
+  type: ShopActionsTypes.FETCH_COLLECTIONS_START,
 });
 
 export const fetchCollectionsSuccess = collectionsMap => ({
   type: ShopActionsTypes.FETCH_COLLECTIONS_SUCCESS,
-  payload: collectionsMap
+  payload: collectionsMap,
 });
 
 export const fetchCollectionsFailure = errorMessage => ({
   type: ShopActionsTypes.FETCH_COLLECTIONS_FAILURE,
-  payload: errorMessage
+  payload: errorMessage,
 });
 
+// redux-thunk
 export const fetchCollectionsStartAsync = () => {
   return dispatch => {
     const collectionRef = firestore.collection('collections');
