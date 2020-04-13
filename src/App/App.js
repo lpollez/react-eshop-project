@@ -9,7 +9,7 @@ import { default as Header } from '../components/header/header.container';
 import { default as ShopPage } from '../pages/shop/shop.container';
 import { default as CheckoutPage } from '../pages/checkout/checkout.container';
 
-import './App.css';
+import { GlobalStyle } from './global.styles';
 
 const App = ({ checkUserSession, currentUser }) => {
   useEffect(() => {
@@ -18,6 +18,7 @@ const App = ({ checkUserSession, currentUser }) => {
 
   return (
     <div>
+      <GlobalStyle />
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
