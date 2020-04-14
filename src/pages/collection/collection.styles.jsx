@@ -10,21 +10,22 @@ export const CollectionPageContainer = styled.div`
 `;
 
 export const CollectionTitle = styled.h2`
-  font-size: 28px;
-  margin: 0 auto 30px auto;
+  text-transform: uppercase;
+  font-size: 2.6rem;
+  margin: 0 auto 3rem auto;
 `;
 
 export const CollectionItemsContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 1rem;
 
   & > div {
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
   }
 
   @media screen and (max-width: 800px) {
     grid-template-columns: 1fr 1fr;
-    grid-gap: 15px;
+    grid-gap: 1.5rem;
   }
 `;

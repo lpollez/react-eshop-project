@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MenuItemContainer = styled.div`
-  height: ${({ size }) => (size ? '380px' : '240px')};
+  height: ${({ size }) => (size ? '38rem' : '24rem')};
   min-width: 30%;
   overflow: hidden;
   flex: 1 1 auto;
@@ -9,7 +9,7 @@ export const MenuItemContainer = styled.div`
   align-items: center;
   justify-content: center;
   border: 1px solid black;
-  margin: 0 7.5px 15px;
+  margin: 0 0.75rem 1.5rem;
   overflow: hidden;
 
   &:hover {
@@ -23,14 +23,15 @@ export const MenuItemContainer = styled.div`
     }
   }
   &:first-child {
-    margin-right: 7.5px;
+    margin-right: 0.75rem;
   }
   &:last-child {
-    margin-left: 7.5px;
+    margin-left: 0.75rem;
   }
 
   @media screen and (max-width: 800px) {
-    height: 200px;
+    width: 80%;
+    height: 20rem;
   }
 `;
 
@@ -43,8 +44,8 @@ export const BackgroundImageContainer = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  height: 90px;
-  padding: 0 25px;
+  height: 9rem;
+  padding: 0 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,12 +58,12 @@ export const ContentContainer = styled.div`
 
 export const ContentTitle = styled.span`
   font-weight: bold;
-  margin-bottom: 6px;
-  font-size: 22px;
+  margin-bottom: 0.6rem;
+  font-size: 2.2rem;
   color: #4a4a4a;
 `;
 
 export const ContentSubtitle = styled.span`
   font-weight: lighter;
-  font-size: 16px;
+  font-size: 1.6rem;
 `;

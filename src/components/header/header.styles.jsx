@@ -2,26 +2,26 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
-  height: 70px;
+  height: 7rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 2.5rem;
 
   @media screen and (max-width: 800px) {
-    height: 60px;
-    padding: 10px;
-    margin-bottom: 20px;
+    height: 6rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
   }
 `;
 
 export const LogoContainer = styled(Link)`
   height: 100%;
-  width: 70px;
-  padding: 25px;
+  width: 7rem;
+  padding: 2.5rem;
 
   @media screen and (max-width: 800px) {
-    width: 50px;
+    width: 5rem;
     padding: 0;
   }
 `;
@@ -39,6 +39,7 @@ export const OptionsContainer = styled.div`
 `;
 
 export const OptionLink = styled(Link)`
-  padding: 10px 15px;
+  font-size: 1.6rem;
+  padding: 1rem 1.5rem;
   cursor: pointer;
 `;

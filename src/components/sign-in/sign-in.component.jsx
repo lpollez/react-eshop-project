@@ -6,6 +6,7 @@ import CustomButton from '../custom-button/custom-button.component';
 import {
   SignInContainer,
   SignInTitle,
+  GoogleButtonBar,
   ButtonsBarContainer,
 } from './sign-in.styles';
 
@@ -52,13 +53,13 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
         />
         <ButtonsBarContainer>
           <CustomButton type="submit">Sign in</CustomButton>
-          <CustomButton
+          <GoogleButtonBar
             type="button"
             onClick={googleSignInStart}
             isGoogleSignIn
           >
             Sign in with Google
-          </CustomButton>
+          </GoogleButtonBar>
         </ButtonsBarContainer>
       </form>
     </SignInContainer>
