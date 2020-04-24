@@ -1,6 +1,7 @@
 import React, { useEffect, lazy, Suspense } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { default as Header } from '../components/header/header.container';
+import { default as Footer } from '../components/footer/footer.container';
 import Spinner from '../components/spinner/spinner.component';
 import ErrorBoundary from '../components/error-boundary/error-boundary.component';
 import { GlobalStyle } from './global.styles';
@@ -36,6 +37,7 @@ const App = ({ checkUserSession, currentUser }) => {
           </Suspense>
         </ErrorBoundary>
       </Switch>
+      <Footer />
     </div>
   );
 };
